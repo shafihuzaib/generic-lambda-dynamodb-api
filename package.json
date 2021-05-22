@@ -1,0 +1,11 @@
+{
+  "name": "@shafihuzaib/generic-lambda-dynamodb-api",
+  "version": "1.0.0",
+  "description": "",
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.16.0",
+    "@aws-sdk/lib-dynamodb": "^3.16.0",
+    "express": "^4.17.1",
+    "serverless-http": "^2.7.0"
+  }
+}
