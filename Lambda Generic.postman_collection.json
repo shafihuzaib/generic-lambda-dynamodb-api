@@ -1,0 +1,93 @@
+{
+	"info": {
+		"_postman_id": "3bc4c03c-073a-4469-8b4c-74280798e771",
+		"name": "Lambda Generic",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "QUERY /pp/products/:primaryKey",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{AWS_BASE_URL}}/pp/products/1",
+					"host": [
+						"{{AWS_BASE_URL}}"
+					],
+					"path": [
+						"pp",
+						"products",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SCAN /pp/products",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{AWS_BASE_URL}}/pp/products",
+					"host": [
+						"{{AWS_BASE_URL}}"
+					],
+					"path": [
+						"pp",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET /pp/products/:primaryKey/:secondaryKey",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{AWS_BASE_URL}}/pp/products/1/published",
+					"host": [
+						"{{AWS_BASE_URL}}"
+					],
+					"path": [
+						"pp",
+						"products",
+						"1",
+						"published"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CREATE / UPDATE - /pp/products",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"primaryKey\": \"3\",\n    \"type\": \"published\",\n    \"data\": {\n        \"approved\": false,\n        \"reviewed\": false\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{AWS_BASE_URL}}/pp/products",
+					"host": [
+						"{{AWS_BASE_URL}}"
+					],
+					"path": [
+						"pp",
+						"products"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

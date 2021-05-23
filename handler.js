@@ -4,7 +4,7 @@ const serverless = require("serverless-http");
 const { DynamoDBClient } = require("@aws-sdk/client-dynamodb");
 const { DynamoDBDocument } = require("@aws-sdk/lib-dynamodb");
 
-const REGION = "us-east-1"; //e.g. "us-east-1"
+const REGION = process.env.region; //e.g. "us-east-1"
 const ddbClient = new DynamoDBClient({ region: REGION });
 const ddbDocClient = DynamoDBDocument.from(ddbClient);
 

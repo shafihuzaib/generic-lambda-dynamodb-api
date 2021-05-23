@@ -7,8 +7,14 @@ provider:
   runtime: nodejs12.x
   lambdaHashingVersion: '20201221'
   stage: dev
+  environment:
+    region: 'us-east-1'
   iam:
     role:
+      name: "generic-lambda-dynamodb-api"
+      managedPolicies:
+        - "arn:aws:iam::aws:policy/AmazonDynamoDBFullAccess"
+      # In case you want specific permissions associated, then define the resources at the end of this file
       statements:
         - Effect: Allow
           Action:
@@ -18,7 +24,7 @@ provider:
             - dynamodb:PutItem
             - dynamodb:UpdateItem
             - dynamodb:DeleteItem
-          Resource: "arn:aws:iam::aws:policy/AmazonDynamoDBFullAccess"
+          Resource: "*"
 
 functions:
   api:
